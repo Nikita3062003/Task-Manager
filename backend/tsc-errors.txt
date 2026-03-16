@@ -1,0 +1,14 @@
+﻿src/controllers/task.controller.ts(74,16): error TS2322: Type 'string | string[]' is not assignable to type 'string | StringFilter<"Task"> | undefined'.
+  Type 'string[]' is not assignable to type 'string | StringFilter<"Task"> | undefined'.
+src/controllers/task.controller.ts(126,16): error TS2322: Type 'string | string[]' is not assignable to type 'string | StringFilter<"Task"> | undefined'.
+  Type 'string[]' is not assignable to type 'string | StringFilter<"Task"> | undefined'.
+src/controllers/task.controller.ts(134,16): error TS2322: Type 'string | string[]' is not assignable to type 'string | undefined'.
+  Type 'string[]' is not assignable to type 'string'.
+src/controllers/task.controller.ts(162,16): error TS2322: Type 'string | string[]' is not assignable to type 'string | StringFilter<"Task"> | undefined'.
+  Type 'string[]' is not assignable to type 'string | StringFilter<"Task"> | undefined'.
+src/controllers/task.controller.ts(169,41): error TS2322: Type 'string | string[]' is not assignable to type 'string | undefined'.
+  Type 'string[]' is not assignable to type 'string'.
+src/controllers/task.controller.ts(189,16): error TS2322: Type 'string | string[]' is not assignable to type 'string | StringFilter<"Task"> | undefined'.
+  Type 'string[]' is not assignable to type 'string | StringFilter<"Task"> | undefined'.
+src/controllers/task.controller.ts(199,16): error TS2322: Type 'string | string[]' is not assignable to type 'string | undefined'.
+  Type 'string[]' is not assignable to type 'string'.
