@@ -71,7 +71,7 @@ export const getTask = async (
     const id = req.params.id as string;
 
     const task = await prisma.task.findFirst({
-      where: { id, userId: req.userId },
+      where: { id: String(id), userId: req.userId as string },
     });
 
     if (!task) {
@@ -123,7 +123,7 @@ export const updateTask = async (
     const data = updateTaskSchema.parse(req.body);
 
     const existingTask = await prisma.task.findFirst({
-      where: { id, userId: req.userId },
+      where: { id: String(id), userId: req.userId as string },
     });
 
     if (!existingTask) {
@@ -131,7 +131,7 @@ export const updateTask = async (
     }
 
     const task = await prisma.task.update({
-      where: { id },
+      where: { id: String(id) },
       data: {
         ...data,
         dueDate: data.dueDate !== undefined
@@ -159,14 +159,14 @@ export const deleteTask = async (
     const id = req.params.id as string;
 
     const existingTask = await prisma.task.findFirst({
-      where: { id, userId: req.userId },
+      where: { id: String(id), userId: req.userId as string },
     });
 
     if (!existingTask) {
       throw new AppError('Task not found', 404);
     }
 
-    await prisma.task.delete({ where: { id } });
+    await prisma.task.delete({ where: { id: String(id) } });
 
     res.json({
       success: true,
@@ -186,7 +186,7 @@ export const toggleTask = async (
     const id = req.params.id as string;
 
     const existingTask = await prisma.task.findFirst({
-      where: { id, userId: req.userId },
+      where: { id: String(id), userId: req.userId as string },
     });
 
     if (!existingTask) {
@@ -196,7 +196,7 @@ export const toggleTask = async (
     const newStatus = existingTask.status === 'DONE' ? 'TODO' : 'DONE';
 
     const task = await prisma.task.update({
-      where: { id },
+      where: { id: String(id) },
       data: { status: newStatus },
     });
 
